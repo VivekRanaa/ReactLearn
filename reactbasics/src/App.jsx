@@ -42,8 +42,10 @@ import HookMouse from "./components/HookMouse.jsx";
 import MouseContainer from "./components/MouseContainer.jsx";
 import ClassIntervalCounter from "./components/ClassIntervalCounter.jsx";
 import IntervalHookCounter from "./components/IntervalHookCounter.jsx";
-import DataFetching from "../DataFetching.jsx";
-
+import DataFetching from "./components/DataFetching.jsx";
+import ComponentContext from "./components/ComponentContext.jsx";
+export const UserContext=React.createContext()
+export const ChannelContext=React.createContext()
 
 
 
@@ -105,8 +107,13 @@ class App extends Component{
                         <HookMouse/>
                         <MouseContainer/>
                         <ClassIntervalCounter/>
-                        <IntervalHookCounter/>*/}
-                        <DataFetching/>
+                        <IntervalHookCounter/>
+                        <DataFetching/>*/}
+                        <UserContext.Provider value="Vivek">
+                                <ChannelContext.Provider value="Rana">
+                                                 <ComponentContext />
+                                    </ChannelContext.Provider>
+                        < /UserContext.Provider>
                     </div>
       );
   }
